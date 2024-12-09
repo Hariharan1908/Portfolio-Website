@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariharan's Portfolio</title>
+    <style>
+        /* Body Styles */
+body {
+    padding: 0;
+    margin: 0;
+    background: url('./images/rear-view-programmer-working-all-night-long.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background: radial-gradient(circle, #1c1c1c, #121212);
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #eaeaea;
+    scroll-behavior: smooth;
+    animation: fadeIn 2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Animation for body */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Section Styles */
+.section {
+    padding: 50px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* Circular Image Styling */
+.images img {
+    display: block;
+    margin: 20px auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00aaff;
+    box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 170, 255, 0.5);
+}
+
+/* Contact Box */
+.contact-box {
+    background: rgba(28, 28, 28, 0.95);
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 20px;
+    width: 550px;
+    margin: 50px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1.5s ease-in-out;
+}
+
+/* Contact Box Text */
+.contact-box p {
+    color: #eaeaea;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.contact-box a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-box a:hover {
+    color: #005f99;
+}
+
+/* Next Button */
+.next-button a {
+    display: inline-block;
+    color: white;
+    background: linear-gradient(45deg, #005f99, #00aaff);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 170, 255, 0.2);
+}
+
+.next-button a:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #003f73, #005f99);
+}
+
+/* Heading Styles */
+h2 {
+    margin-top: 60px;
+    font-size: 30px;
+    color: #00aaff;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0, 170, 255, 0.5);
+}
+
+/* Paragraph Styles */
+p, .paragh {
+    font-size: 18px;
+    color: #d6d6d6;
+    font-style: normal;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .images img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .contact-box {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .next-button a {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+    </style>
+
+</head>
+<body>
+     <!-- Projects Section -->
+     <section id="projects" class="section">
+        <h1 class="h1_head">My Projects</h1>
+        <p><b><u>A showcase of the projects I've worked on, demonstrating my skills in web development, Java, and Python.</u></b></p>
+
+        <div class="project">
+            <h3>Interior Design Website (Figma Project)</h3>
+            <p>Designed a user-friendly and visually appealing website layout for an interior design company using Figma. The project emphasized responsiveness, color theory, and modern design aesthetics.</p>
+            <ul>
+                <li>Intuitive navigation for seamless browsing</li>
+                <li>High-quality imagery showcasing design portfolios</li>
+                <li>Interactive elements for a better user experience</li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <h3>Hospital Management System (Java Project)</h3>
+            <p>Developed a fully functional Hospital Management System using Java and NetBeans. This system enables hospital administrators to manage patient records, appointments, staff details, and billing information.</p>
+            <ul>
+                <li>Patient registration and appointment scheduling</li>
+                <li>Database integration for real-time record management</li>
+                <li>Secure access and report generation for patient history and billing</li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <h3>Portfolio Website (HTML, CSS, JavaScript)</h3>
+            <p>Created a personal portfolio website to showcase my projects and skills. The website is designed to be fully responsive and highlights my web development expertise.</p>
+            <ul>
+                <li>Clean and modern design with a focus on user experience</li>
+                <li>Responsive layout for both mobile and desktop views</li>
+                <li>Interactive sections to showcase projects and technical skills</li>
+            </ul>
+        </div>
+
+        <div class="project">
+            <h3>Tic Tac Toe Game (Python Project)</h3>
+            <p>Built a classic Tic Tac Toe game using Python with a simple and easy-to-navigate interface. It supports two-player gameplay and win-draw-lose detection.</p>
+            <ul>
+                <li>Interactive two-player gameplay</li>
+                <li>Visual representation of the game board</li>
+                <li>Option to replay the game</li>
+            </ul>
+        </div>
+
+        <div class="next-button"><br>
+            <a href="./about.html">Next: About Me</a>
+            <a href="./index.html">Back</a>
+        </div>
+    </section>
+
+    <!-- JavaScript for responsiveness -->
+    <script>
+        // Adjust font size and padding based on window width
+        function adjustResponsiveElements() {
+            const projects = document.querySelectorAll('.project');
+            const windowWidth = window.innerWidth;
+
+            projects.forEach(project => {
+                if (windowWidth < 600) {
+                    project.style.padding = '15px';
+                    project.style.fontSize = '14px';
+                } else if (windowWidth < 900) {
+                    project.style.padding = '20px';
+                    project.style.fontSize = '16px';
+                } else {
+                    project.style.padding = '25px';
+                    project.style.fontSize = '18px';
+                }
+            });
+        }
+
+        // Add event listener for window resizing
+        window.addEventListener('resize', adjustResponsiveElements);
+
+        // Initial function call to set the right styles
+        window.onload = adjustResponsiveElements;
+    </script>
+
+</body>
+</html>

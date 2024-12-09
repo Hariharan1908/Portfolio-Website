@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariharan's Portfolio</title>
+</head>
+<body>
+    <style>
+        /* Body Styles */
+body {
+    padding: 0;
+    margin: 0;
+    background: url('./images/rear-view-programmer-working-all-night-long.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background: radial-gradient(circle, #1c1c1c, #121212);
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #eaeaea;
+    scroll-behavior: smooth;
+    animation: fadeIn 2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Animation for body */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Section Styles */
+.section {
+    padding: 50px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* Circular Image Styling */
+.images img {
+    display: block;
+    margin: 20px auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00aaff;
+    box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 170, 255, 0.5);
+}
+
+/* Contact Box */
+.contact-box {
+    background: rgba(28, 28, 28, 0.95);
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 20px;
+    width: 550px;
+    margin: 50px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1.5s ease-in-out;
+}
+
+/* Contact Box Text */
+.contact-box p {
+    color: #eaeaea;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.contact-box a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-box a:hover {
+    color: #005f99;
+}
+
+/* Next Button */
+.next-button a {
+    display: inline-block;
+    color: white;
+    background: linear-gradient(45deg, #005f99, #00aaff);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 170, 255, 0.2);
+}
+
+.next-button a:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #003f73, #005f99);
+}
+
+/* Heading Styles */
+h2 {
+    margin-top: 60px;
+    font-size: 30px;
+    color: #00aaff;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0, 170, 255, 0.5);
+}
+
+/* Paragraph Styles */
+p, .paragh {
+    font-size: 18px;
+    color: #d6d6d6;
+    font-style: normal;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .images img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .contact-box {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .next-button a {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+    </style>
+
+    <!-- Home Section -->
+    <section id="home" class="section">
+        <h2>Welcome to My Home Page</h2>
+        <p class="paragh"><u>where I introduce myself and talk about my passion for web development.</u></p>
+        <p>Hi, I'm Hariharan, a full-stack web developer passionate about building clean, responsive, and user-friendly websites. <br>
+            I specialize in both front-end and back-end development, utilizing technologies like HTML, CSS, JavaScript, <br> and Python to create seamless digital experiences.</p>
+
+        <!-- Circular Image Centered -->
+        <div class="images">
+            <img src="./images/IMG_9981.JPG" alt="Hariharan Image">
+        </div>
+
+        <!-- Contact Box -->
+        <div class="contact-box">
+            <p>EMAIL: <a href="mailto:hariharanp1912@gmail.com">hariharanp1912@gmail.com</a></p>
+            <p>CONTACT: <a href="tel:+918489911622">+91 8489911622</a></p>
+            <p>LINKEDIN: <a href="https://www.linkedin.com/in/hariharan-p-webdeveloper1912">https://www.linkedin.com/in/hariharan-p-webdeveloper1912</a></p>
+            <p>GITHUB: <a href="https://github.com/Hariharan1908">https://github.com/Hariharan1908</a></p>
+        </div>
+
+        <!-- Next Button -->
+        <div class="next-button">
+            <a href="./intern.html">Next: Internship</a>
+            <a href="./index.html">Back</a>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript to handle responsive actions
+
+        // Add event listener for window resize
+        window.addEventListener('resize', function() {
+            adjustLayout();
+        });
+
+        function adjustLayout() {
+            const width = window.innerWidth;
+
+            if (width <= 768) {
+                document.body.style.flexDirection = 'column'; // Adjust layout for mobile
+            } else {
+                document.body.style.flexDirection = 'row'; // For desktop
+            }
+        }
+
+        // Call adjustLayout on page load
+        adjustLayout();
+    </script>
+
+</body>
+</html>

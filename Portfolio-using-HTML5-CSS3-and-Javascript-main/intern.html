@@ -1,0 +1,339 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariharan's Portfolio</title>
+    <style>
+        /* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styles */
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: #eaeaea;
+    scroll-behavior: smooth;
+    animation: fadeIn 2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    background: linear-gradient(to bottom, #2c3e50, #bdc3c7);
+    background-attachment: fixed;
+}
+
+/* Animation for body */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Section Styles */
+.section {
+    padding: 20px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* Circular Image Styling */
+.images img {
+    padding: 10px;
+    display: block;
+    margin: 20px auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid rgba(135, 206, 235, 0.7);
+    box-shadow: 0 0 20px rgba(135, 206, 235, 0.4);
+    transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.images img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 0 30px rgba(135, 206, 235, 0.7);
+}
+
+/* Card container */
+.card-container {
+    display: flex;
+    justify-content: center;
+    flex-direction: row; /* Arrange cards horizontally */
+    gap: 20px;
+    max-width: 100%; /* Limit width of the container */
+    overflow-x: auto; /* Enable horizontal scrolling */
+    align-items: flex-start; /* Align cards to the top */
+    padding: 20px;
+    scrollbar-width: thin; /* Thin scrollbar for modern browsers */
+    scrollbar-color: #87ceeb transparent; /* Custom scrollbar color */
+}
+
+/* Scrollbar Styling for Webkit (Chrome, Edge, Safari) */
+.card-container::-webkit-scrollbar {
+    height: 8px; /* Horizontal scrollbar */
+}
+
+.card-container::-webkit-scrollbar-track {
+    background: transparent; /* Track background */
+}
+
+.card-container::-webkit-scrollbar-thumb {
+    background: #87ceeb; /* Scrollbar color */
+    border-radius: 4px; /* Rounded edges */
+}
+
+.card-container::-webkit-scrollbar-thumb:hover {
+    background: #5d8aa8; /* Darker thumb on hover */
+}
+
+/* Individual card */
+.card {
+    width: 450px; /* Fixed width for horizontal alignment */
+    height: auto; /* Adjust height based on content */
+    border-radius: 15px;
+    position: relative;
+    overflow: hidden;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start; /* Align content to the top */
+    text-align: left;
+    transition: transform 0.5s ease, filter 0.5s ease;
+    filter: brightness(0.9);
+    background-size: cover;
+    background-position: center;
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+    background: linear-gradient(to bottom right, #34495e, #7f8c8d);
+}
+
+/* Card hover effect */
+.card:hover {
+    transform: scale(1.02); /* Slight hover effect */
+    filter: brightness(1);
+    box-shadow: 0 0 30px rgba(135, 206, 235, 0.5);
+}
+
+/* Card Gradient Overlay */
+.card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.3));
+    z-index: 1;
+    transition: opacity 0.5s ease;
+}
+
+.card:hover::before {
+    opacity: 0;
+}
+
+/* Card Content */
+.card-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px;
+    overflow-y: auto; /* Scroll text if content overflows */
+    max-height: 300px; /* Ensure the card's content doesn't overflow */
+}
+
+.card-content::-webkit-scrollbar {
+    width: 5px;
+}
+
+.card-content::-webkit-scrollbar-thumb {
+    background: #87ceeb;
+    border-radius: 4px;
+}
+
+.card h3 {
+    font-size: 24px;
+    margin-bottom: 10px;
+    color: #87ceeb;
+    text-shadow: 0 0 5px rgba(135, 206, 235, 0.8);
+}
+
+.card p {
+    font-size: 16px;
+    color: #f1f1f1;
+    line-height: 1.6;
+    margin-bottom: 10px; /* Add space between paragraphs */
+}
+
+
+
+/* Next Button */
+.next-button {
+    margin-top: 20px;
+    animation: bounce 2s infinite;
+}
+
+.next-button a {
+    color: white;
+    background: linear-gradient(45deg, #87ceeb, #5d8aa8);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 0 15px rgba(135, 206, 235, 0.4);
+}
+
+.next-button a:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #5d8aa8, #87ceeb);
+}
+
+/* Section Header */
+.head_h {
+    color: #87ceeb;
+    font-size: 36px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 15px;
+    text-shadow: 0 0 10px rgba(135, 206, 235, 0.8);
+}
+
+/* Paragraph Styling */
+p {
+    font-size: 18px;
+    color: #e0e0e0;
+    line-height: 1.6;
+    animation: fadeInUp 0.8s ease-out;
+}
+
+/* Intern Content */
+.intern_content {
+    background: rgba(52, 73, 94, 0.8);
+    border-radius: 15px;
+    padding: 20px;
+    box-shadow: 0 0 20px rgba(135, 206, 235, 0.3);
+    margin-top: 30px;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    .card {
+        width: 100%;
+        height: auto;
+    }
+    .head_h {
+        font-size: 28px;
+    }
+    .images img {
+        width: 140px;
+        height: 140px;
+    }
+}
+
+    </style>
+</head>
+<body>
+
+    <!-- Internship Section -->
+    <section id="internship" class="section">
+        <h1 class="head_h">Internship Experience</h1>
+        <p class="paras"><u>Details about the internships I've completed, focusing on Full Stack Web Development and Ethical Hacking.</u></p>
+
+        <!-- Circular Image -->
+        <div class="images">
+            <img src="./images/intern.jpg" alt="Internship Experience">
+        </div>
+
+        <!-- Card container -->
+        <div class="card-container">
+            <!-- Card 1: Why Global Services -->
+            <div class="card card-why-global">
+                <div class="card-content">
+                    <h3>Why Global Services | Chennai</h3>
+                    <p>Collaborating on full-stack web development projects, utilizing both front-end (HTML, CSS, JavaScript, React) and back-end (Express, MongoDB, Postman) technologies.</p>
+                    <p>Designing and implementing responsive user interfaces that enhance user experience across various devices.</p>
+                    <p>Developing and maintaining server-side logic to support seamless interaction between the front-end and databases.</p>
+                    <p>Participating in code reviews, debugging, and testing to ensure the delivery of high-quality software solutions.</p>
+                </div>
+            </div>
+
+            <!-- Card 2: Kaashiv Info Tech Company -->
+            <div class="card card-kaashiv">
+                <div class="card-content">
+                    <h3>Kaashiv Info Tech Company | Chennai</h3>
+                    <p>Developed and implemented security measures to protect systems and data from unauthorized access, using industry-standard tools like Metasploit, Nmap, and Wireshark.</p>
+                    <p>Assisted in securing web applications by performing code reviews and testing for common vulnerabilities such as SQL injection, XSS, and CSRF.</p>
+                    <p>Collaborated with the security team to create detailed reports of findings, including risk assessments, impact analysis, and actionable recommendations.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="intern_content">
+            <h2>During My Intern Days</h2>
+            <p>
+                During my internship at Why Global Services, I collaborated on diverse full-stack web development projects, leveraging a range of technologies from both front-end and back-end perspectives. My responsibilities included:
+                <br><br>
+                <strong>Front-End Development:</strong> Utilized HTML, CSS, JavaScript, and React to design and implement responsive user interfaces, ensuring a seamless user experience across various devices.
+                <br><br>
+                <strong>Back-End Development:</strong> Developed server-side logic using Express and managed databases with MongoDB. Employed tools like Postman for API testing and integration.
+                <br><br>
+                <strong>Quality Assurance:</strong> Participated actively in code reviews, debugging sessions, and rigorous testing procedures to deliver high-quality, reliable software solutions.
+                <br><br>
+                This role honed my skills in creating robust web applications and enhanced my ability to work effectively in a collaborative development environment.
+            </p>
+
+            <p>
+                At Kaashiv Info Tech Company, I gained hands-on experience in cybersecurity, focusing on safeguarding systems and data. My key contributions included:
+                <br><br>
+                <strong>Security Implementation:</strong> Developed and enforced security measures to protect against unauthorized access, utilizing tools such as Metasploit, Nmap, and Wireshark.
+                <br><br>
+                <strong>Vulnerability Testing:</strong> Conducted code reviews and vulnerability assessments to identify and mitigate common security issues like SQL injection, XSS, and CSRF.
+                <br><br>
+                <strong>Reporting and Analysis:</strong> Collaborated with the security team to produce detailed reports, including risk assessments and actionable recommendations for enhancing system security.
+                <br><br>
+                This internship provided me with a solid foundation in ethical hacking and security practices, furthering my expertise in protecting digital assets.
+            </p>
+        </div>
+
+        <!-- Next Button Section -->
+        <div class="next-button">
+            <a href="./projects.html">Next: Projects</a>
+            <a href="./index.html">Back</a>
+        </div>
+    </section>
+
+    <script>
+        // Add JavaScript to make the page responsive
+        function adjustLayout() {
+            const cards = document.querySelectorAll('.card');
+            const screenWidth = window.innerWidth;
+
+            cards.forEach(card => {
+                if (screenWidth < 768) {
+                    card.style.width = '100%';
+                    card.style.height = 'auto';
+                } else {
+                    card.style.width = '450px';
+                    card.style.height = '340px';
+                }
+            });
+        }
+
+        // Initial adjustment on page load
+        adjustLayout();
+
+        // Adjust layout on window resize
+        window.addEventListener('resize', adjustLayout);
+    </script>
+
+</body>
+</html>

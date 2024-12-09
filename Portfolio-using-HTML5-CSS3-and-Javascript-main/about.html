@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariharan's Portfolio</title>
+    
+    <style>
+        /* Body Styles */
+body {
+    padding: 0;
+    margin: 0;
+    background: url('./images/rear-view-programmer-working-all-night-long.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background: radial-gradient(circle, #1c1c1c, #121212);
+    font-family: 'Poppins', Arial, sans-serif;
+    color: #eaeaea;
+    scroll-behavior: smooth;
+    animation: fadeIn 2s ease-in-out;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+    overflow-x: hidden;
+}
+
+/* Animation for body */
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Section Styles */
+.section {
+    padding: 50px;
+    text-align: center;
+    min-height: 100vh;
+}
+
+/* Circular Image Styling */
+.images img {
+    display: block;
+    margin: 20px auto;
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 2px solid #00aaff;
+    box-shadow: 0 4px 15px rgba(0, 170, 255, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.images img:hover {
+    transform: scale(1.05);
+    box-shadow: 0 6px 20px rgba(0, 170, 255, 0.5);
+}
+
+/* Contact Box */
+.contact-box {
+    background: rgba(28, 28, 28, 0.95);
+    border: 1px solid #2a2a2a;
+    border-radius: 10px;
+    padding: 20px;
+    width: 550px;
+    margin: 50px auto;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+    animation: slideIn 1.5s ease-in-out;
+}
+
+/* Contact Box Text */
+.contact-box p {
+    color: #eaeaea;
+    font-size: 16px;
+    margin: 10px 0;
+}
+
+.contact-box a {
+    color: #00aaff;
+    text-decoration: none;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+.contact-box a:hover {
+    color: #005f99;
+}
+
+/* Next Button */
+.next-button a {
+    display: inline-block;
+    color: white;
+    background: linear-gradient(45deg, #005f99, #00aaff);
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: transform 0.3s ease, background 0.3s ease;
+    box-shadow: 0 4px 10px rgba(0, 170, 255, 0.2);
+}
+
+.next-button a:hover {
+    transform: scale(1.1);
+    background: linear-gradient(45deg, #003f73, #005f99);
+}
+
+/* Heading Styles */
+h2 {
+    margin-top: 60px;
+    font-size: 30px;
+    color: #00aaff;
+    text-transform: uppercase;
+    font-weight: 700;
+    margin-bottom: 20px;
+    text-shadow: 0 2px 5px rgba(0, 170, 255, 0.5);
+}
+
+/* Paragraph Styles */
+p, .paragh {
+    font-size: 18px;
+    color: #d6d6d6;
+    font-style: normal;
+    line-height: 1.6;
+    margin: 10px 0;
+}
+
+/* Responsive Styling */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+
+    .images img {
+        width: 140px;
+        height: 140px;
+    }
+
+    .contact-box {
+        width: 100%;
+        margin: 20px auto;
+    }
+
+    h2 {
+        font-size: 24px;
+    }
+
+    p {
+        font-size: 16px;
+    }
+
+    .next-button a {
+        margin: 10px 0;
+        width: 100%;
+        text-align: center;
+    }
+}
+
+    </style>
+
+    
+</head>
+<body>
+    <!-- About Section -->
+    <section id="about" class="section">
+        <h1 class="head_h1">About Me</h1>
+        <p class="para"><u><b>Here is some information about my background, my interests, and what drives me.</b></u></p>
+        
+        <div class="images">
+            <img src="./images/IMG_9981.JPG" alt="Placeholder Image">
+        </div>
+
+        <div class="text-content">
+            <p>Hi, I'm Hariharan, a passionate full-stack web developer with a strong interest in creating responsive and dynamic websites. 
+                My journey began with a fascination for how websites work, and over time, it developed into a true passion. 
+                I love crafting user-friendly interfaces and working on both front-end and back-end technologies to build seamless web applications.</p>
+
+            <p>With a strong foundation in web development, I strive to combine aesthetics with functionality. My expertise spans from designing interactive 
+                interfaces to optimizing back-end performance. I am always eager to learn new technologies and refine my skills to stay updated in this fast-paced industry. 
+                I believe in building websites that not only look great but are also optimized for speed, SEO, and accessibility.</p>
+        </div>
+
+        <div class="next-button">
+            <a href="./home.html">Go to home</a>
+            <a href="./index.html">Back</a>
+        </div>
+    </section>
+
+    <script>
+        // JavaScript to make the page responsive dynamically
+        function adjustContentLayout() {
+            const textContent = document.querySelector('.text-content');
+            const screenWidth = window.innerWidth;
+
+            if (screenWidth < 768) {
+                textContent.style.padding = '15px';
+            } else {
+                textContent.style.padding = '30px';
+            }
+        }
+
+        // Adjust content layout on page load
+        adjustContentLayout();
+
+        // Adjust layout on window resize
+        window.addEventListener('resize', adjustContentLayout);
+    </script>
+</body>
+</html>

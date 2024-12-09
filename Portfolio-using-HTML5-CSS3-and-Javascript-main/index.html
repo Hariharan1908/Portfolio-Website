@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hariharan's Portfolio</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.8)), 
+                        url(./images/programming-background-with-person-working-with-codes-computer.jpg);
+            background-size: cover;
+            background-position: center; 
+            background-repeat: no-repeat;
+            background-color: #000;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+            color: #fff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden;
+        }
+
+        /* Container for centering */
+        .container {
+            z-index: 2;
+            position: relative;
+        }
+
+        /* Name Styles */
+        .animated-name {
+            font-size: 60px;
+            font-weight: bold;
+            animation: fadeInDown 2s ease-out;
+            margin-bottom: 50px;
+            background: linear-gradient(90deg, #ff7e5f, #feb47b);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            color: transparent;
+        }
+
+        /* Navigation Bar */
+        nav {
+            position: relative;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin: 0 20px;
+        }
+
+        nav ul li a {
+            font-size: 24px;
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            position: relative;
+            padding: 10px;
+            transition: color 0.3s ease-in-out;
+        }
+
+        nav ul li a:hover {
+            color: #28e81a;
+            transition: 0.3s ease-in-out;
+        }
+
+        /* Mobile Menu Toggle Button */
+        .menu-toggle {
+            display: none;
+            position: absolute;
+            top: 0;
+            right: 20px;
+            font-size: 30px;
+            cursor: pointer;
+            color: #fff;
+        }
+
+        /* Responsive Styling */
+        @media (max-width: 768px) {
+            .animated-name {
+                font-size: 40px;
+            }
+
+            nav ul {
+                flex-direction: column;
+                background-color: rgba(0, 0, 0, 0.9);
+                position: absolute;
+                top: 60px;
+                left: 0;
+                right: 0;
+                display: none;
+            }
+
+            nav ul li {
+                margin: 20px 0;
+            }
+
+            .menu-toggle {
+                display: block;
+            }
+        }
+
+        /* Animation for name */
+        @keyframes fadeInDown {
+            0% {
+                opacity: 0;
+                transform: translateY(-30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation for nav links */
+        nav ul li {
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 2s ease-in forwards;
+        }
+
+        nav ul li:nth-child(1) {
+            animation-delay: 0.5s;
+        }
+
+        nav ul li:nth-child(2) {
+            animation-delay: 1s;
+        }
+
+        nav ul li:nth-child(3) {
+            animation-delay: 1.5s;
+        }
+
+        nav ul li:nth-child(4) {
+            animation-delay: 2s;
+        }
+
+        @keyframes fadeInUp {
+            0% {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Container for name and navigation -->
+    <div class="container">
+        <!-- Name with animation -->
+        <h1 class="animated-name">PORTFOLIO FROM HARIHARAN</h1>
+
+        <!-- Navigation Bar -->
+        <span class="menu-toggle">&#9776;</span> <!-- Hamburger Menu -->
+        <nav>
+            <ul>
+                <li><a href="./home.html">Home</a></li>
+                <li><a href="./intern.html">Internship</a></li>
+                <li><a href="./projects.html">Projects</a></li>
+                <li><a href="./about.html">About</a></li>
+            </ul>
+
+            <img src=""
+        </nav>
+    </div>
+
+    <script>
+        // JavaScript for menu toggle
+        const menuToggle = document.querySelector('.menu-toggle');
+        const navUl = document.querySelector('nav ul');
+
+        menuToggle.addEventListener('click', () => {
+            navUl.style.display = navUl.style.display === 'flex' ? 'none' : 'flex';
+        });
+
+        // Ensure the menu resets on window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 768) {
+                navUl.style.display = 'flex'; // Desktop view
+            } else {
+                navUl.style.display = 'none'; // Mobile view
+            }
+        });
+    </script>
+</body>
+</html>
